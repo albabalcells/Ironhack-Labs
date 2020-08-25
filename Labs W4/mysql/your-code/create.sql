@@ -1,0 +1,36 @@
+CREATE DATABASE lab_mysql;
+USE lab_mysql;
+
+CREATE TABLE Customers (
+	ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	customer_id INT NOT NULL,
+	`name` VARCHAR(50),
+	phone BIGINT,
+	email VARCHAR(30),
+	address VARCHAR(30),
+	city VARCHAR(20),
+	state VARCHAR(20),
+	country VARCHAR(20),
+	zip INT);
+
+CREATE TABLE Invoices (
+	ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	invoice_num INT NOT NULL,
+	`date` DATE, 
+	car VARCHAR(30) NOT NULL,
+	customer INT NOT NULL,
+	staff INT);
+	
+CREATE TABLE Salespersons (
+	ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	staff_ID INT NOT NULL,
+	`name` VARCHAR(50),
+	store VARCHAR(20));
+
+CREATE TABLE Cars (
+	ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	VIN VARCHAR(30),
+	manufacturer VARCHAR(20),
+	model VARCHAR(20),
+	`year` YEAR,
+	color VARCHAR(15));
